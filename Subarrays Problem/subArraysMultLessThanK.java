@@ -3,9 +3,9 @@ import java.util.*;
 class subArraysMultLessThanK{
 	
 	public static void main(String[] args){
-
+		//program to find the number of subarrays whose multiples are less than K. Subarrays are defines as adjacent elements.
 		Scanner scan = new Scanner(System.in);
-		System.out.println("How many elements?");
+		System.out.println("How many numbers would you like to add?");
 		int number = scan.nextInt();
 
 		int [] arr = new int[number];
@@ -15,7 +15,7 @@ class subArraysMultLessThanK{
 			arr[i]=scan.nextInt();
 		}
 
-		System.out.println("Enter K");
+		System.out.println("Enter K (Program will find subarrays mult less than K):");
 		int k = scan.nextInt();
 
 		int result = findProducts(arr,k);
@@ -32,9 +32,11 @@ class subArraysMultLessThanK{
 			product = product * array[end];
 			while(start < end && product>=k){
 				product = product / array[start++];
+				System.out.println("pr:"+product);
 			}
 			
 			if(product < k){
+				System.out.println("end:"+end +",st:"+start);
 				int len = end-start + 1;
 				counter= counter + len;
 			}

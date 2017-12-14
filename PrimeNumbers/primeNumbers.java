@@ -19,7 +19,7 @@ public class primeNumbers {
 				//and makes them false. This way we simplify the formula.
 				for(int i = 2 * divisor; i<= primes.length-1; i = i + divisor){
 					primes[i] = false;
-					//System.out.print(""+i+",");
+					System.out.print(""+i+",");
 				}
 			}
 		}
